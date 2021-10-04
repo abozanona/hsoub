@@ -1,0 +1,55 @@
+name: hsoub
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0 
+  flutter_bloc:
+  http:
+  html: ^0.15.0
+  flutter_lints: ^1.0.0
+  dio: ^4.0.0
+  cookie_jar: ^3.0.1
+  dio_cookie_manager: ^2.0.0
+  logger: ^1.1.0
+  flutter_localized_locales: 
+  timeago: ^3.1.0
+  flutter_html: ^2.1.2
+  clipboard: ^0.1.3
+  url_launcher: ^6.0.12
+  flutter_quill: ^2.0.5
+  delta_markdown: 
+  markdown: 
+  shared_preferences: 
+  fluttertoast: ^8.0.8
+  lazy_load_scrollview: ^1.3.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+   - assets/images/
+
+  fonts:
+    - family: cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700

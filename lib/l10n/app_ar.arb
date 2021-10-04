@@ -1,0 +1,7 @@
+{
+    "appName": "حسوب",
+    "@appName": {
+        "description": "The app name"
+    },
+    "sideBarUserProfile": "ملف المستخدم"
+}
