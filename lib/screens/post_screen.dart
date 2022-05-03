@@ -21,8 +21,8 @@ class _PostScreenState extends State<PostScreen> {
       create: (BuildContext context) => HomeBloc()
         //TODO: Change this later
         ..add(
-          GetPostEvent(widget.id),
-          // GetPostEvent(45758),
+          // GetPostEvent(widget.id),
+          GetPostEvent(45758),
         ),
       child: BlocConsumer<HomeBloc, HomeState>(
         listener: (BuildContext context, HomeState state) {

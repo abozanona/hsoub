@@ -6,6 +6,7 @@ import 'package:hsoub/models/community.dart';
 import 'package:hsoub/models/post.dart';
 import 'package:hsoub/models/user.dart';
 import 'package:html/parser.dart' show parse;
+import 'package:logger/logger.dart';
 
 class DataExtractor {
   static String getLoginLink(String html) {
@@ -41,8 +42,9 @@ class DataExtractor {
 
         res.add(category);
       } catch (ex, trace) {
-        log(ex.toString());
-        log(trace.toString());
+        var logger = Logger();
+        logger.e(ex.toString());
+        logger.e(trace.toString());
       }
     });
     return res;
@@ -78,8 +80,9 @@ class DataExtractor {
 
         res.add(post);
       } catch (ex, trace) {
-        log(ex.toString());
-        log(trace.toString());
+        var logger = Logger();
+        logger.e(ex.toString());
+        logger.e(trace.toString());
       }
     });
     return res;

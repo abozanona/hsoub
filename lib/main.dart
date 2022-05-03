@@ -35,8 +35,8 @@ class _MyAppState extends State<MyApp> {
           900: Color.fromRGBO(245, 96, 42, 1),
         }),
       ),
-      // home: const LoginScreen(),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
+      // home: const HomeScreen(),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

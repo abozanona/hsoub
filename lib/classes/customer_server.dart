@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:developer';
+import 'package:logger/logger.dart';
 
 import 'package:hsoub/api/response_enums.dart';
 import 'package:hsoub/models/community.dart';
@@ -41,8 +41,9 @@ class CustomerServer {
         Endpoints.hsoubHome(),
       );
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return LoginResult.loginException;
     }
 
@@ -52,8 +53,9 @@ class CustomerServer {
         loginLink1,
       );
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return LoginResult.loginException;
     }
 
@@ -90,8 +92,9 @@ class CustomerServer {
         ),
       );
     } on DioError catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       if (ex.response!.statusCode == 401) {
         return LoginResult.passwordError;
       }
@@ -103,8 +106,9 @@ class CustomerServer {
         'https://accounts.hsoub.com/oauth/authorize?client_id=$client_id&redirect_uri=https%3A%2F%2Fio.hsoub.com%2Fusers%2Fauth%2Fhsoub%2Fcallback&response_type=code&state=$state',
       );
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return LoginResult.loginException;
     }
 
@@ -133,8 +137,9 @@ class CustomerServer {
       );
       return DataExtractor.getCommunities(response.data['content']);
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return [];
     }
   }
@@ -188,8 +193,9 @@ class CustomerServer {
       );
       return DataExtractor.getPosts(response.data['content']);
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return [];
     }
   }
@@ -208,8 +214,9 @@ class CustomerServer {
       );
       return DataExtractor.getPost(response.data);
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return Post();
     }
   }
@@ -248,8 +255,9 @@ class CustomerServer {
       );
       return DataExtractor.getPosts(response.data['content']);
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return [];
     }
   }
@@ -279,8 +287,9 @@ class CustomerServer {
       );
       return true;
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return false;
     }
   }
@@ -313,8 +322,9 @@ class CustomerServer {
       loggedInUser.avatar = response.data['avatar'];
       return loggedInUser;
     } catch (ex, trace) {
-      log(ex.toString());
-      log(trace.toString());
+      var logger = Logger();
+      logger.e(ex.toString());
+      logger.e(trace.toString());
       return LoggedInUser();
     }
   }
